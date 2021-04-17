@@ -156,11 +156,11 @@ public class ElectricLamp {
 	public String toString() {
 		return "ElectricLamp Brand = " + getBrand() +
 				", \nManufacturerCountry = " + getManufacturerCountry() +
-				", \nPower = " + getPower() + "Watts" +
+				", \nPower = " + getPower() + " Watts" +
 				", \nDaysGaranty = " + getDaysGaranty() + " days" +
 				", \nCapType = " + getCapType() +
 				", \nBulbColor = " + getBulbColor() +
-				", \nDisperseAngle = " + getDisperseAngle() + "°" +
+				", \nDisperseAngle = " + getDisperseAngle() + "Â°" +
 				", \nLuminescenceTemperature = " + getLuminescenceTemperature() + "K" +
 				", \nLightFlow = " + getLightFlow() + " Lumems" +
 				", \nDiameter = " + getDiameter() + "mm" +
