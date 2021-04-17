@@ -13,7 +13,7 @@ My task was to:
   8. Provide class with methods(static and regular) to print value of static field
 
 To run the code:
-  1. Make sure you have java installed and envuroment variables set
+  1. Make sure you have java installed and enviroment variables set
   2. Download or clone the repo(in command prompt type "**git clone https://github.com/SlavikYur/java_lab_repo.git**")
   3. Go into that folder
   4. Type "**javac App.java**"
