@@ -18,13 +18,13 @@ import services.ItemOrderedService;
 
 @RestController
 @RequestMapping(path = "/item_ordered")
-public class ShippingController {
+public class ItemOrderedController {
 
 	@Autowired
 	private ItemOrderedService itemOrderedService;
 
 	@GetMapping(path = "{id}")
-	public ResponseEntity<ItemOrdered> getItemOrdered(@PathVariable (name = "id") final Integer id) {
+	public ResponseEntity<ItemOrdered> getItemOrdered(@PathVariable(name = "id") final Integer id) {
 		if (itemOrderedService.getItemOrdered(id) != null) {
 			return new ResponseEntity<ItemOrdered>(itemOrderedService.getItemOrdered(id), HttpStatus.OK);
 		}
@@ -41,28 +41,18 @@ public class ShippingController {
 		return itemOrderedService.addItemOrdered(itemOrdered);
 	}
 
-	@PutMapping
-	public ResponseEntity<ItemOrdered> updateItemOrdered(@RequestBody final ItemOrdered itemOrdered) {
-		if (itemOrderedService.getItemOrdered(itemOrdered.getId()) != null) {
-			return new ResponseEntity<ItemOrdered>(
-					itemOrderedService.updateItemOrdered(itemOrdered), HttpStatus.OK);
-		}
-		return new ResponseEntity<ItemOrdered>(HttpStatus.NOT_FOUND);
-	}
-
 	@PutMapping(path = "/{id}")
-	public ResponseEntity<ItemOrdered> updateItemOrdered(
-			@RequestBody final ItemOrdered itemOrdered,
-			@PathVariable (name = "id") final Integer id) {
+	public ResponseEntity<ItemOrdered> updateItemOrdered(@RequestBody final ItemOrdered itemOrdered,
+			@PathVariable(name = "id") final Integer id) {
 		if (itemOrderedService.getItemOrdered(id) != null) {
-			return new ResponseEntity<ItemOrdered>(
-					itemOrderedService.updateItemOrdered(id, itemOrdered), HttpStatus.OK);
+			return new ResponseEntity<ItemOrdered>(itemOrderedService.updateItemOrdered(id, itemOrdered),
+					HttpStatus.OK);
 		}
 		return new ResponseEntity<ItemOrdered>(HttpStatus.NOT_FOUND);
 	}
 
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<ItemOrdered> deleteItemOrdered(@PathVariable (name = "id") final Integer id) {
+	public ResponseEntity<ItemOrdered> deleteItemOrdered(@PathVariable(name = "id") final Integer id) {
 		if (itemOrderedService.getItemOrdered(id) != null) {
 			return new ResponseEntity<ItemOrdered>(itemOrderedService.deleteItemOrdered(id), HttpStatus.OK);
 		}
